@@ -17,3 +17,34 @@ Um jogo divertido de adivinhação numérica.
 
 # Requisitos
 - .NET SDK (recomendado .NET 8.0 ou superior) para compilação e execução do projeto.
+
+# Como Utilizar
+1. **Clone o Repositório:**
+```
+git clone https://github.com/gsvsantos/JogoDeAdivinhacao.git
+```
+
+2. Abra o terminal ou prompt de comando e navegue até a pasta raiz do Jogo.
+
+3. Utilize o comando abaixo para restaurar as dependências do projeto.
+```
+dotnet restore
+```
+
+4. Compile e execute o arquivo *.exe* do jogo.
+```
+dotnet build --configuration Release
+```
+```
+JogoDeAdivinhacao.ConsoleApp.exe
+```
+
+### Opcional
+- Executar o projeto compilando em tempo real
+```
+dotnet run --project JogoDeAdivinhacao.ConsoleApp
+```
+
+# Sobre o Projeto
+
+Este projeto foi desenvolvido como parte de uma atividade da [Academia do Programador](https://www.instagram.com/academiadoprogramador/).
