@@ -1,32 +1,32 @@
-## Jogo de Adivinhação
+## Jogo de AdivinhaÃ§Ã£o
 
-![](https://i.imgur.com/icRPLm5.gif)
+![](https://i.imgur.com/MsHl6WJ.gif)
 
 # Projeto
-Um jogo divertido de adivinhação numérica.
+Um jogo divertido de adivinhaÃ§Ã£o numÃ©rica.
 
 # Como Jogar
-- Escolha um nível de dificuldade.
-- Digite um número até adivinhar o número sortado.
+- Escolha um nÃ­vel de dificuldade.
+- Digite um nÃºmero atÃ© adivinhar o nÃºmero sortado.
 - Tente acertar antes de estourar suas tentativas.
 
 # Funcionalidades
-- **Geração de Número Aleatório:** Em cada desafio, o jogo irá gerar aleatoriamente um número secreto entre 1 e 20.
-- **Seleção de Dificuldade:** Existem 3 modos padrão de jogo, (Fácil, Médio e Difícil), onde cada um tem um total de tentativa específico.
-- **Modo Personalizado:** Disponibilidade de escolher quantas tentativas deseja e até quanto será gerado o número secreto *(Exemplo: 1 a 50)*.
+- **GeraÃ§Ã£o de NÃºmero AleatÃ³rio:** Em cada desafio, o jogo irÃ¡ gerar aleatoriamente um nÃºmero secreto entre 1 e 20.
+- **SeleÃ§Ã£o de Dificuldade:** Existem 3 modos padrÃ£o de jogo, (FÃ¡cil, MÃ©dio e DifÃ­cil), onde cada um tem um total de tentativa especÃ­fico.
+- **Modo Personalizado:** Disponibilidade de escolher quantas tentativas deseja e atÃ© quanto serÃ¡ gerado o nÃºmero secreto *(Exemplo: 1 a 50)*.
 
 # Requisitos
-- .NET SDK (recomendado .NET 8.0 ou superior) para compilação e execução do projeto.
+- .NET SDK (recomendado .NET 8.0 ou superior) para compilaÃ§Ã£o e execuÃ§Ã£o do projeto.
 
 # Como Utilizar
-1. **Clone o Repositório:**
+1. **Clone o RepositÃ³rio:**
 ```
 git clone https://github.com/gsvsantos/JogoDeAdivinhacao.git
 ```
 
-2. Abra o terminal ou prompt de comando e navegue até a pasta raiz do Jogo.
+2. Abra o terminal ou prompt de comando e navegue atÃ© a pasta raiz do Jogo.
 
-3. Utilize o comando abaixo para restaurar as dependências do projeto.
+3. Utilize o comando abaixo para restaurar as dependÃªncias do projeto.
 ```
 dotnet restore
 ```
