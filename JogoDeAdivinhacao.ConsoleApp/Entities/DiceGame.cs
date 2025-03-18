@@ -39,10 +39,6 @@ namespace JogoDeAdivinhacao.ConsoleApp.Entities
                         Console.Clear();
                         mainMenu = false;
                         break;
-                    default:
-                        Console.WriteLine($"Acredito que {option} não é uma das opções..");
-                        Console.WriteLine("Aperte [Enter] e tente novamente.");
-                        break;
                 }
             } while (mainMenu);
         }
@@ -58,50 +54,42 @@ namespace JogoDeAdivinhacao.ConsoleApp.Entities
             }
             for (int i = 1; i <= MaxAttempts; i++)
             {
-                Console.WriteLine("-------------------------");
+                Console.WriteLine("----------------------------------------------");
                 Console.WriteLine($"Tentativa {i} de {MaxAttempts}");
-                Console.WriteLine("-------------------------");
+                Console.WriteLine("----------------------------------------------");
                 int choosenNumber = Auxiliary.IntVerify("\nDigite um número: ", "\nPrecisa ser um número inteiro válido...");
 
                 if (choosenNumber == RandomNumber)
                 {
-                    Console.WriteLine("----------------------------------");
+                    Console.WriteLine("----------------------------------------------");
                     Console.WriteLine("Você acertou o número sorteado!!");
-                    Console.WriteLine("----------------------------------");
+                    Console.WriteLine("----------------------------------------------");
                     break;
                 }
                 else if (choosenNumber > RandomNumber)
                 {
+                    Console.Clear();
                     Console.WriteLine("----------------------------------------------");
                     Console.WriteLine("O seu número é maior que o número sorteado!!");
-                    Console.WriteLine("----------------------------------------------");
                 }
                 else if (choosenNumber < RandomNumber)
                 {
+                    Console.Clear();
                     Console.WriteLine("----------------------------------------------");
                     Console.WriteLine("O seu número é menor que o número sorteado!!");
-                    Console.WriteLine("----------------------------------------------");
                 }
                 if (i == MaxAttempts)
                 {
-                    Console.WriteLine("----------------------------------");
+                    Console.WriteLine("----------------------------------------------");
                     Console.WriteLine("Que pena! Você estorou suas tentativas!");
-                    Console.WriteLine($"O número secreto era {RandomNumber}");
-                    Console.WriteLine("----------------------------------");
+                    Console.WriteLine($"O número secreto era > {RandomNumber} <");
+                    Console.WriteLine("----------------------------------------------");
                     break;
                 }
             }
-            Console.Write("Deseja jogar novamente? (S/N): ");
-            string optionContinue = Console.ReadLine()!.ToUpper();
-
-            while (optionContinue != "S" && optionContinue != "N")
-            {
-                Console.Write("\nOpção inválida!\n\nPressione <Enter> e selecione novamente.");
-                Console.Write("\nDeseja continuar? (S/N): ");
-                optionContinue = Console.ReadLine()!.ToUpper();
-            }
-            if (optionContinue != "S")
-                return;
+            Console.Write("\nPressione [Enter] para voltar ao menu.");
+            Console.ReadKey();
+            return;
         }
         public static void GameModes()
         {
@@ -124,19 +112,19 @@ namespace JogoDeAdivinhacao.ConsoleApp.Entities
                 {
                     IsPersonalized = false;
                     MaxAttempts = 10;
-                    Console.WriteLine("\nModo fácil escolhido!\nVocê terá 10 tentativas, boa sorte!");
+                    Console.WriteLine("\nDificuldade Fácil escolhida!\nVocê terá 10 tentativas, easy peasy!");
                 }
                 if (option == "2")
                 {
                     IsPersonalized = false;
                     MaxAttempts = 5;
-                    Console.WriteLine("\nModo médio escolhido!\nVocê terá 5 tentativas, boa sorte!");
+                    Console.WriteLine("\nDificuldade Médio escolhido!\nVocê terá 5 tentativas, boa sorte!");
                 }
                 if (option == "3")
                 {
                     IsPersonalized = false;
                     MaxAttempts = 3;
-                    Console.WriteLine("\nModo difícil escolhido!\nVocê terá 3 tentativas, força, guerreiro(a)!!");
+                    Console.WriteLine("\nDificuldade Difícil escolhido!\nVocê terá 3 tentativas, força, guerreiro(a)!!");
                 }
                 if (option == "4")
                 {
@@ -166,7 +154,7 @@ namespace JogoDeAdivinhacao.ConsoleApp.Entities
                 {
                     break;
                 }
-                Console.WriteLine("\nPressione [Enter] para continuar!");
+                Console.Write("\nPressione [Enter] para continuar!");
                 Console.ReadKey();
             } while (onMenu);
         }
