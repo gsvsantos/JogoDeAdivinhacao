@@ -54,7 +54,7 @@ namespace JogoDeAdivinhacao.ConsoleApp.Entities.Utils
                     Console.WriteLine($"\nAcho que isso não é uma opção...");
                     continue;
                 }
-                input = input.ToUpper();
+                input = input.Trim().ToUpper();
                 for (int i = 0; i < options.Length; i++)
                 {
                     if (input == options[i])
