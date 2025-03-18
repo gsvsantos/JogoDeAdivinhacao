@@ -1,12 +1,13 @@
 # Jogo de Adivinhação
 
-![](https://i.imgur.com/MsHl6WJ.gif)
+![](https://i.imgur.com/w4BNirK.gif)
 
 ## Projeto
 Um jogo divertido de adivinhação numérica.
 
 ## Como Jogar
-- Escolha um nível de dificuldade.
+- Navegue pelos Menu Inicial e pelo Principal.
+- Inicie uma partida ou antes escolha uma dificuldade diferente.
 - Digite um número até adivinhar o número sortado.
 - Tente acertar antes de estourar suas tentativas.
 
