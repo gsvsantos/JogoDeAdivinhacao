@@ -46,7 +46,7 @@ namespace JogoDeAdivinhacao.ConsoleApp.Entities
         {
             if (IsPersonalized == true)
             {
-                RandomNumber = Random.Next(1, NewMaxRandomNumber);
+                RandomNumber = Random.Next(1, ++NewMaxRandomNumber);
             }
             else
             {
@@ -147,7 +147,6 @@ namespace JogoDeAdivinhacao.ConsoleApp.Entities
                     }
                     else
                         Console.WriteLine($"Será gerado um número de 1 até {NewMaxRandomNumber}, e você terá {MaxAttempts} tentativas!");
-                    RandomNumber = Random.Next(1, ++NewMaxRandomNumber);
                     IsPersonalized = true;
                 }
                 if (option == "S")
