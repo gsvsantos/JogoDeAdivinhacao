@@ -22,7 +22,7 @@ namespace JogoDeAdivinhacao.ConsoleApp
                 {
                     case "1":
                         Console.Clear();
-                        DiceGame.MainMenu();
+                        GuessGame.MainMenu();
                         break;
                     case "S":
                         homeScreen = false;

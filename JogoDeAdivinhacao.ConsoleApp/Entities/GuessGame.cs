@@ -2,11 +2,12 @@
 
 namespace JogoDeAdivinhacao.ConsoleApp.Entities
 {
-    class DiceGame
+    class GuessGame
     {
         public static Random Random = new Random();
         public static int RandomNumber;
         public static int NewMaxRandomNumber = 0;
+        public static int ActualAttempt = 1;
         public static int MaxAttempts = 5;
         public static bool IsPersonalized = false;
 
@@ -44,6 +45,70 @@ namespace JogoDeAdivinhacao.ConsoleApp.Entities
         }
         public static void GameStart()
         {
+            bool gotMaxAttemps, userGuessed;
+
+            GenerateRandomNumber();
+            do
+            {
+                int userGuess = GetUserGuess();
+                gotMaxAttemps = CheckAttemps();
+                if (gotMaxAttemps == true)
+                    break;
+                userGuessed = CheckGuessTry(userGuess);
+            } while (userGuessed == false);
+
+            Console.Write("\nPressione [Enter] para voltar ao menu.");
+            Console.ReadKey();
+            ActualAttempt = 1;
+            return;
+        }
+        public static bool CheckGuessTry(int userGuess)
+        {
+            if (userGuess == RandomNumber)
+            {
+                Console.WriteLine("----------------------------------------------");
+                Console.WriteLine("Você acertou o número sorteado!!");
+                Console.WriteLine("----------------------------------------------");
+                return true;
+            }
+            else if (userGuess > RandomNumber)
+            {
+                Console.Clear();
+                Console.WriteLine("----------------------------------------------");
+                Console.WriteLine("O seu número é maior que o número sorteado!!");
+            }
+            else if (userGuess < RandomNumber)
+            {
+                Console.Clear();
+                Console.WriteLine("----------------------------------------------");
+                Console.WriteLine("O seu número é menor que o número sorteado!!");
+            }
+            ActualAttempt++;
+            return false;
+        }
+
+        public static int GetUserGuess()
+        {
+            Console.WriteLine("----------------------------------------------");
+            Console.WriteLine($"Tentativa {ActualAttempt} de {MaxAttempts}");
+            Console.WriteLine("----------------------------------------------");
+            int choosenNumber = Auxiliary.IntVerify("\nDigite um número: ", "\nPrecisa ser um número inteiro válido...");
+            return choosenNumber;
+        }
+        public static bool CheckAttemps()
+        {
+            if (ActualAttempt == MaxAttempts)
+            {
+                Console.WriteLine("----------------------------------------------");
+                Console.WriteLine("Que pena! Você estorou suas tentativas!");
+                Console.WriteLine($"O número secreto era > {RandomNumber} <");
+                Console.WriteLine("----------------------------------------------");
+                return true;
+            }
+            return false;
+        }
+        public static void GenerateRandomNumber()
+        {
             if (IsPersonalized == true)
             {
                 RandomNumber = Random.Next(1, NewMaxRandomNumber);
@@ -52,44 +117,6 @@ namespace JogoDeAdivinhacao.ConsoleApp.Entities
             {
                 RandomNumber = Random.Next(1, 21);
             }
-            for (int i = 1; i <= MaxAttempts; i++)
-            {
-                Console.WriteLine("----------------------------------------------");
-                Console.WriteLine($"Tentativa {i} de {MaxAttempts}");
-                Console.WriteLine("----------------------------------------------");
-                int choosenNumber = Auxiliary.IntVerify("\nDigite um número: ", "\nPrecisa ser um número inteiro válido...");
-
-                if (choosenNumber == RandomNumber)
-                {
-                    Console.WriteLine("----------------------------------------------");
-                    Console.WriteLine("Você acertou o número sorteado!!");
-                    Console.WriteLine("----------------------------------------------");
-                    break;
-                }
-                else if (choosenNumber > RandomNumber)
-                {
-                    Console.Clear();
-                    Console.WriteLine("----------------------------------------------");
-                    Console.WriteLine("O seu número é maior que o número sorteado!!");
-                }
-                else if (choosenNumber < RandomNumber)
-                {
-                    Console.Clear();
-                    Console.WriteLine("----------------------------------------------");
-                    Console.WriteLine("O seu número é menor que o número sorteado!!");
-                }
-                if (i == MaxAttempts)
-                {
-                    Console.WriteLine("----------------------------------------------");
-                    Console.WriteLine("Que pena! Você estorou suas tentativas!");
-                    Console.WriteLine($"O número secreto era > {RandomNumber} <");
-                    Console.WriteLine("----------------------------------------------");
-                    break;
-                }
-            }
-            Console.Write("\nPressione [Enter] para voltar ao menu.");
-            Console.ReadKey();
-            return;
         }
         public static void GameModes()
         {
