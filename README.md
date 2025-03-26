@@ -18,6 +18,9 @@ Um jogo divertido de adivinhação numérica.
 
 ## Requisitos
 - .NET SDK (recomendado .NET 8.0 ou superior) para compilação e execução do projeto.
+  
+## Tecnologias
+[![Tecnologias](https://skillicons.dev/icons?i=git,github,visualstudio,cs,dotnet)](https://skillicons.dev)
 
 ## Como Utilizar
 1. **Clone o Repositório:**
